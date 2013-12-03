@@ -13,10 +13,10 @@ public final class PrimeFactorGenerator {
     }
 
     public long findFirstSmallerPrime(final long value) {
-        if(value <=1 ) {
+        if (value <= 1) {
             throw new IllegalArgumentException();
         }
-        
+
         final Long lastPrime = cache.get(0);
 
         if (lastPrime >= value) {
@@ -31,18 +31,16 @@ public final class PrimeFactorGenerator {
     }
 
     private long findNewPrime(final long lastPrime, final long value) {
-        if (lastPrime > value) {
-            return lastPrime;
-        } else {
-            long newPrime = lastPrime + 2;
-
-            while (!isPrime(newPrime)) {
-                newPrime +=  2;
-            }
+        long newPrime = lastPrime;
+        while (newPrime <= value) {
+            do {
+                newPrime += 2;
+            } while (!isPrime(newPrime));
 
             cache.add(0, newPrime);
-            return findNewPrime(newPrime, value);
         }
+
+        return newPrime;
     }
 
     private boolean isPrime(final long newPrime) {

@@ -8,7 +8,12 @@ public class ProjectEuler3SimpleImpl implements ProjectEuler3 {
         }
 
         final long sqrt = (long) Math.ceil(Math.sqrt(value));
-        return new PrimeFactorGenerator().findFirstSmallerPrime(value);
+
+        if (sqrt > 11) {
+            return new PrimeFactorGenerator().findFirstSmallerPrime(sqrt);
+        } else {
+            return new PrimeFactorGenerator().findFirstSmallerPrime(value);
+        }
     }
 
 }
