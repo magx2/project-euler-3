@@ -19,14 +19,14 @@ public final class PrimeFactorGenerator {
         
         final Long lastPrime = cache.get(0);
 
-        if (lastPrime > value) {
+        if (lastPrime >= value) {
             return getFromCache(value);
         } else {
             final long newPrime = findNewPrime(lastPrime, value);
 
             cache.add(0, newPrime);
 
-            return newPrime;
+            return findFirstSmallerPrime(value);
         }
     }
 
@@ -56,7 +56,7 @@ public final class PrimeFactorGenerator {
 
     private long getFromCache(final long value) {
         for (final long prime : cache) {
-            if (prime < value) {
+            if (prime <= value) {
                 return prime;
             }
         }

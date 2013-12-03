@@ -21,8 +21,8 @@ public class ProjectEuler3SimpleImplTest {
 
     @Parameters
     public static Collection<Object[]> data() {
-        final Object[][] data = new Object[][] { { 2, 2 }, { 3, 3 }, { 4, 4 },
-                { 5, 5 }, { 6, 3 }, { 9, 3 }, { 14, 13 } };
+        final Object[][] data = new Object[][] { { 2, 2 }, { 3, 3 }, { 4, 3 },
+                { 5, 5 }, { 6, 5 }, { 9, 7 }, { 14, 13 } };
         return Arrays.asList(data);
     }
 
@@ -42,7 +42,7 @@ public class ProjectEuler3SimpleImplTest {
     @Test(expected = IllegalArgumentException.class)
     public void test_maxValue_equals_0() {
 
-     // given
+        // given
         final ProjectEuler3SimpleImpl euler = new ProjectEuler3SimpleImpl();
 
         // when
@@ -52,7 +52,7 @@ public class ProjectEuler3SimpleImplTest {
     @Test(expected = IllegalArgumentException.class)
     public void test_maxValue_equals_minus_1() {
 
-     // given
+        // given
         final ProjectEuler3SimpleImpl euler = new ProjectEuler3SimpleImpl();
 
         // when

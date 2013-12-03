@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import org.fest.assertions.Assertions;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -21,7 +22,8 @@ public final class PrimeFactorGeneratorTest {
 
     @Parameters
     public static Collection<Object[]> data() {
-        final Object[][] data = new Object[][] { { 4, 5 }, { 12, 13 }, {6916,6917} };
+        final Object[][] data = new Object[][] { { 2, 2 }, { 4, 3 },
+                { 14, 13 }, { 6918, 6917 } };
         return Arrays.asList(data);
     }
 
@@ -66,5 +68,16 @@ public final class PrimeFactorGeneratorTest {
 
         // when
         generator.findFirstSmallerPrime(1);
+    }
+
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
+    public void test_maxValue_equals_2() {
+
+        // given
+        final PrimeFactorGenerator generator = new PrimeFactorGenerator();
+
+        // when
+        generator.findFirstSmallerPrime(2);
     }
 }
