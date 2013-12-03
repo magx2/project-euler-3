@@ -2,6 +2,8 @@ package pl.grzeslowski.project_euler_3;
 
 public class ProjectEuler3DiffrentWay implements ProjectEuler3 {
 
+    private final Prime prime = new Prime();
+
     @Override
     public long findLargestPrimeFactor(final long value) {
         if (value <= 0) {
@@ -30,7 +32,6 @@ public class ProjectEuler3DiffrentWay implements ProjectEuler3 {
     }
 
     private long quickFind(final long value) {
-        final Prime prime = new Prime();
         final long sqrt = getMaxDivider(value);
 
         for (int i = 0; i < sqrt; i += 2) {
