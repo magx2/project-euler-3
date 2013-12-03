@@ -21,7 +21,7 @@ public final class PrimeFactorGeneratorTest {
 
     @Parameters
     public static Collection<Object[]> data() {
-        final Object[][] data = new Object[][] { { 2, 2 }, { 14, 13 } };
+        final Object[][] data = new Object[][] { { 4, 5 }, { 12, 13 }, {6916,6917} };
         return Arrays.asList(data);
     }
 
