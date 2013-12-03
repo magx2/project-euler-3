@@ -3,14 +3,11 @@ package pl.grzeslowski.project_euler_3;
 public class Main {
 
     public static void main(final String[] args) {
-        final long l = 600_851_475_143L;
+        final long value = Long.parseLong(args[0]);
 
-        try {
-            System.out.println(new ProjectEuler3DiffrentWay()
-                    .findLargestPrimeFactor(l));
-        } catch (final Throwable ex) {
-            System.out.println(ex.getClass().getSimpleName());
-        }
+        final ProjectEuler3DiffrentWay euler = new ProjectEuler3DiffrentWay();
+        System.out.println(euler
+                .findLargestPrimeFactor(value));
     }
 
 }
