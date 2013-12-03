@@ -6,7 +6,7 @@ public class Main {
         final long l = 600_851_475_143L;
 
         try {
-            System.out.println(new ProjectEuler3SimpleImpl()
+            System.out.println(new ProjectEuler3DiffrentWay()
                     .findLargestPrimeFactor(l));
         } catch (final Throwable ex) {
             System.out.println(ex.getClass().getSimpleName());
